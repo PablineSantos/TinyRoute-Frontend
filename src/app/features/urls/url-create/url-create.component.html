@@ -1,0 +1,63 @@
+<div class="tr-card">
+  @if (!generatedUrl()) {
+    <div class="create-header">
+      <h2>Encurtador de link</h2>
+      <p class="subtitle">Rápido, seguro e pronto para compartilhar.</p>
+    </div>
+
+    <div class="form-group">
+      <label>Link Original</label>
+      <input [(ngModel)]="originalUrl" class="tr-input" placeholder="Cole aqui sua URL longa (ex: https://site-muito-longo.com/pagina)">
+    </div>
+
+    <div class="form-group">
+      <label>Personalização (Opcional)</label>
+      <p class="help-text">Escolha um apelido curto para seu link ou deixe em branco para gerar um aleatório.</p>
+      <div class="alias-container">
+        <span class="prefix">tiny.route:8080/</span>
+        <input [(ngModel)]="customAlias" class="tr-input alias-input" placeholder="meu-link-top">
+      </div>
+    </div>
+
+    @if (authService.isLoggedIn()) {
+      <div class="pro-grid">
+        <div class="form-group">
+          <label>Limite de Cliques</label>
+          <input type="number" [(ngModel)]="maxClicks" class="tr-input" placeholder="Ilimitado">
+        </div>
+        <div class="form-group">
+          <label>Expiração</label>
+          <input type="datetime-local" [(ngModel)]="expiresAt" class="tr-input">
+        </div>
+      </div>
+    } @else {
+      <div class="login-promo">
+        <div class="promo-text">
+          <h4>Gratuito para uso imediato</h4>
+          <p>Crie conta e tenha acesso a mais recursos como estatísticas e limites.</p>
+        </div>
+        <a href="/register" class="promo-link">Registar Agora →</a>
+      </div>
+    }
+
+    <button class="btn-primary btn-block" [disabled]="loading || !originalUrl" (click)="create()">
+      {{ loading ? 'Encurtando...' : 'Criar Link' }}
+    </button>
+  } @else {
+    <div class="success-view">
+      <div class="success-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+      </div>
+      <h3>Link pronto!</h3>
+      <div class="result-box">
+        <a [href]="generatedUrl()?.shortUrl" target="_blank">
+          {{ generatedUrl()?.shortUrl }}
+        </a>
+      </div>
+      <div class="success-actions">
+        <button class="btn-primary" (click)="copyToClipboard()">Copiar Link</button>
+        <button class="btn-outline" (click)="reset()">Criar outro link</button>
+      </div>
+    </div>
+  }
+</div>

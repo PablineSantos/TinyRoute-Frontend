@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <div class="logo" routerLink="/">TinyRoute</div>
+
+  <div class="nav-links">
+    @if (!authFacade.isLoggedIn()) {
+      <button class="btn-text" routerLink="/login">Entrar</button>
+      <button class="btn-primary" style="width: auto; padding: 8px 20px" routerLink="/register">Registar</button>
+    } @else {
+      <div class="user-profile">
+        <div class="avatar">
+          {{ (authFacade.currentUser|| 'U').charAt(0).toUpperCase() }}
+        </div>
+
+        <span class="user-name">
+    {{ authFacade.currentUser || 'Usuário' }}
+        </span>
+      </div>
+      <button class="btn-text" (click)="logout()">Sair</button>
+    }
+  </div>
+</nav>

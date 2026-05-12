@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+
+<div class="dashboard-container">
+
+  @if (showCreateForm) {
+    <section class="create-panel">
+      <app-url-create (created)="onCreated()"></app-url-create>
+    </section>
+  }
+
+  <header class="list-header">
+    <div class="header-content">
+      <h2>Minhas URLs</h2>
+      <p class="subtitle">Gerencie seus links encurtados e acompanhe estatísticas.</p>
+    </div>
+
+    <div class="dash-toolbar">
+      <div class="search-wrapper">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" [formControl]="searchControl" class="tr-input search-input" placeholder="Pesquisar links...">      </div>
+
+      <button class="btn-primary" (click)="toggleCreate()">
+        {{ showCreateForm ? '✕ Fechar Encurtador' : 'Criar Novo Link' }}
+      </button>
+    </div>
+  </header>
+
+  <div class="table-container shadow-sm">
+    <app-url-list></app-url-list>
+  </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="auth-wrapper">
+  <div class="tr-card auth-card">
+    <div class="auth-header">
+      <h2>Entrar</h2>
+      <p class="subtitle">Acesse sua conta para gerenciar seus links.</p>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input [(ngModel)]="email" class="tr-input" placeholder="seu@email.com" (keyup.enter)="login()">
+    </div>
+
+    <div class="form-group">
+      <label>Senha</label>
+      <input [(ngModel)]="password" type="password" class="tr-input" placeholder="Minimo 6 caracteres" (keyup.enter)="login()">
+    </div>
+
+    <button class="btn-primary btn-block" style="margin-top: 1rem;" (click)="login()">Entrar na sua conta</button>
+
+    <p class="auth-footer">Não possui conta? <a href="/register">Registar-se</a></p>
+  </div>
+</div>
