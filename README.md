@@ -1,59 +1,106 @@
-# TinyRouteFrontend
+🚀 TinyRoute - Web App (Frontend)
+=================================
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+O **TinyRoute** é uma plataforma moderna e profissional para o encurtamento de URLs, desenvolvida para simplificar a partilha de links e permitir o rastreio de métricas de engajamento. Este repositório contém o código-fonte do Frontend, criado para oferecer uma experiência de usuário (UX) fluida, responsiva e de alta performance.
 
-## Development server
+✨ Funcionalidades Principais
+----------------------------
 
-To start a local development server, run:
+*   🔐 **Autenticação Segura:** Sistema completo de Login e Registo de utilizadores, protegido por JWT (JSON Web Tokens).
+    
+*   📊 **Dashboard de Gestão:** Um painel de controlo interativo onde os utilizadores podem visualizar, pesquisar e gerir todos os seus links encurtados.
+    
+*   🔗 **Encurtador Avançado:** - Criação rápida de links curtos a partir de URLs longas.
+    
+    *   **Alias Personalizado:** Opção para escolher o nome do link final (ex: tiny.route:8080/meu-link).
+        
+    *   **Limite de Cliques:** Definição de um número máximo de acessos permitidos por link (exclusivo para utilizadores autenticados).
+        
+    *   **Expiração:** Configuração de uma data e hora limite para a validade do link (exclusivo para utilizadores autenticados).
+        
+*   📋 **Ações Rápidas:** Botão de cópia para a área de transferência com feedback visual e gestão de status (Ativo/Inativo).
+    
 
-```bash
-ng serve
-```
+🛠️ Tecnologias Utilizadas
+--------------------------
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Este projeto foi construído com ferramentas modernas do ecossistema web:
 
-## Code scaffolding
+*   **Angular 18+:** Arquitetura baseada em _Standalone Components_, dispensando a utilização de NgModules para um código mais limpo e modular.
+    
+*   **RxJS:** Gestão de fluxos assíncronos e reatividade na comunicação com a API.
+    
+*   **ngx-toastr:** Biblioteca para notificações e alertas visuais elegantes (Toast messages).
+    
+*   **Design Responsivo & CSS Nativo:** Interface adaptável a diferentes tamanhos de ecrã (Mobile, Tablet, Desktop) utilizando Flexbox, CSS Grid e variáveis CSS (Custom Properties) para consistência visual.
+    
+*   **Signals:** Utilização do novo padrão reativo do Angular para controlo de estado local otimizado.
+    
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+⚙️ Instruções de Execução
+-------------------------
 
-```bash
-ng generate component component-name
-```
+Para correr o projeto localmente no seu ambiente de desenvolvimento, siga os passos abaixo:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Pré-requisitos
 
-```bash
-ng generate --help
-```
+*   **Node.js** (versão LTS recomendada)
+    
+*   **Angular CLI** instalado globalmente (npm install -g @angular/cli)
+    
 
-## Building
+### Comandos para Iniciar
 
-To build the project run:
+1.  Clone o repositório para a sua máquina:
+    
 
-```bash
-ng build
-```
+Bash
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/SEU_USUARIO/tiny-route-frontend.git   `
 
-## Running unit tests
+1.  Aceda à pasta do projeto:
+    
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Bash
 
-```bash
-ng test
-```
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   cd tiny-route-frontend   `
 
-## Running end-to-end tests
+1.  Instale as dependências:
+    
 
-For end-to-end (e2e) testing, run:
+Bash
 
-```bash
-ng e2e
-```
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   npm install   `
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+1.  Inicie o servidor de desenvolvimento:
+    
 
-## Additional Resources
+Bash
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   ng serve   `
+
+A aplicação estará disponível no seu navegador no endereço: http://localhost:4200/._(Lembre-se de certificar que a API do Backend também está em execução para o correto funcionamento da plataforma)._
+
+📂 Estrutura do Projeto
+-----------------------
+
+A arquitetura do projeto foi desenhada para ser escalável e de fácil manutenção, baseada na divisão por domínios (Feature-Driven):
+
+Plaintext
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   src/app/  ├── core/             # Lógica global e imutável  │   ├── auth/         # Facades e gestão de estado de autenticação  │   ├── guards/       # Proteção de rotas (AuthGuard)  │   ├── interceptors/ # Interceção de requisições HTTP (AuthInterceptor)  │   ├── models/       # Interfaces e tipagem de dados  │   └── services/     # Comunicação com a API (AuthService, UrlService)  │  ├── features/         # Módulos funcionais da aplicação  │   ├── auth/         # Componentes de Login e Registo  │   ├── dashboard/    # Ecrã principal de gestão de utilizadores logados  │   ├── public/       # Páginas abertas (Home/Landing Page)  │   └── urls/         # Lógica isolada de criação (UrlCreate) e listagem (UrlList)  │  └── shared/           # Componentes e recursos reutilizáveis      └── components/   # Ex: Navbar   `
+
+🏛️ Integração e Arquitetura
+----------------------------
+
+O ecossistema **TinyRoute** foi desenvolvido como um projeto em grupo com uma rigorosa separação de responsabilidades (Backend e Frontend).
+
+A arquitetura deste Frontend reflete o consumo de uma API RESTful robusta desenvolvida em paralelo. Como o desenvolvimento principal da lógica de negócio, processamento de dados e regras de segurança foi centralizado no **Backend**, este cliente Angular atua exclusivamente como a camada de apresentação.
+
+### Diretrizes de Contribuição e Integração:
+
+*   **Separação Rigorosa:** Nenhuma regra de negócio pesada ou validação de segurança crítica deve ser duplicada no Frontend. O Angular deve apenas refletir o estado entregue pela API e gerir a experiência do utilizador.
+    
+*   **Comunicação com a API:** Todas as chamadas ao Backend estão centralizadas nos serviços do diretório core/services/. Para alterar endpoints ou adicionar novas rotas da API, modifique os ficheiros adequados nesta camada, respeitando o environment.ts.
+    
+*   **Manutenção de Componentes:** Mantenha os componentes o mais _"dumb"_ (simples) possível, delegando a gestão de estado complexa para Facades ou Serviços.
