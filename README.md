@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 TinyRoute - Web App (Frontend)
 
 O **TinyRoute** é uma plataforma moderna e profissional para o encurtamento de URLs, desenvolvida para simplificar o compartilhamento de links e permitir o rastreio de métricas de engajamento. Este repositório contém o código-fonte do Frontend, criado para oferecer uma experiência de usuário (UX) fluida, responsiva e de alta performance.
@@ -44,7 +44,7 @@ Para rodar o projeto localmente no seu ambiente de desenvolvimento, siga os pass
 ```bash
 git clone [https://github.com/SEU_USUARIO/tiny-route-frontend.git](https://github.com/SEU_USUARIO/tiny-route-frontend.git)
 
-```
+
 
 2. Acesse a pasta do projeto:
 
