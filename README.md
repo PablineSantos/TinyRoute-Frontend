@@ -110,3 +110,4 @@ A arquitetura deste Frontend reflete o consumo de uma API RESTful robusta desenv
 * **Comunicação com a API:** Todas as chamadas ao Backend estão centralizadas nos serviços do diretório `core/services/`. Para alterar endpoints ou adicionar novas rotas da API, modifique os arquivos adequados nesta camada, respeitando as configurações de ambiente.
 * **Manutenção de Componentes:** Mantenha os componentes o mais *"dumb"* (simples) possível, delegando a gestão de estado complexa para Facades ou Serviços.
 
+## [👉 Projeto FullStack](https://github.com/PablineSantos/TinyRoute)
