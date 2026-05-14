@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import {UrlCreateComponent} from '../../urls/url-create/url-create.component';
-import {Navbar} from '../../../shared/components/navbar/';
+import {NavbarComponent} from '../../../shared/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [UrlCreateComponent,Navbar],
+  imports: [UrlCreateComponent,NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

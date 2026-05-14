@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {UrlCreateComponent} from '../urls/url-create/url-create.component';
-import {Navbar} from '../../shared/components/navbar/';
+import {NavbarComponent} from '../../shared/components/navbar/navbar.component';
 import {UrlListComponent} from '../urls/url-list/url-list.component';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 import {debounceTime, distinctUntilChanged} from 'rxjs';
@@ -9,7 +9,7 @@ import {takeUntilDestroyed} from '@angular/core/rxjs-interop';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [UrlCreateComponent, UrlListComponent, Navbar,ReactiveFormsModule],
+  imports: [UrlCreateComponent, UrlListComponent, NavbarComponent,ReactiveFormsModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
