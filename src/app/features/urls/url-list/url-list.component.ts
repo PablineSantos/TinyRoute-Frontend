@@ -1,9 +1,10 @@
-import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import {UrlService} from '../../../core/services/url.service';
 import {ShortUrlModel} from '../../../core/models/short-url.model';
 import {Router} from '@angular/router';
 import {DatePipe, UpperCasePipe} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
+import {interval, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-url-list',
@@ -12,8 +13,8 @@ import {ToastrService} from 'ngx-toastr';
   templateUrl: './url-list.component.html',
   styleUrl: './url-list.component.css'
 })
-export class UrlListComponent implements OnInit {
-
+export class UrlListComponent implements OnInit, OnDestroy {
+  private pollingSub!: Subscription;
   urls: ShortUrlModel[] = [];
 
   constructor(private readonly urlService: UrlService, private readonly cdr: ChangeDetectorRef, private readonly router: Router, private toastr: ToastrService) {
@@ -33,10 +34,17 @@ export class UrlListComponent implements OnInit {
     });
   }
 
-  ngOnInit()
-    :
-    void {
+  ngOnInit(): void {
     this.loadUrls();
+    this.pollingSub = interval(1000).subscribe(() => {
+      this.loadUrls();
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.pollingSub) {
+      this.pollingSub.unsubscribe();
+    }
   }
 
   copyLink(url: string) {
